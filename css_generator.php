@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 function my_scandir ($dir_path)
