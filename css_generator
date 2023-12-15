@@ -1,0 +1,44 @@
+#!/usr/bin/php
+<?php
+
+// array_shift($argv);
+// print_r($argv);
+
+$sprite_name = "sprite.png";
+$css_name = "sprite.css";
+
+for($i = 1; $i < $argc; $i++) {
+    if(strpos($argv[$i], "-") === 0) {
+        switch($argv[$i]) {
+            case "-r":
+                echo "Récusivité activée\n";
+                break;
+            case "-i":
+                echo "Choose your sprite name\n";
+                break;
+            case "-s":
+                echo "Choose your css name\n";
+                break;
+            default:
+                echo "Error\n";
+        }
+    }
+}
+
+include "my_scandir.php";
+include "my_merge.php";
+
+
+$folder_path = end($argv);
+
+if($folder_path === "man") {
+    echo file_get_contents("manual_css_generator.txt");
+} else {
+    $arr = my_scandir($folder_path);
+    echo "Les fichiers .png ont été récupérés\n";
+    my_merge_image($arr);
+}
+
+
+
+// echo file_get_contents("css_generator_manual.txt");
