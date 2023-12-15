@@ -1,6 +1,6 @@
 <?php
 
-function my_merge_image ($my_array)
+function my_merge_image ($my_array, $sprite_name, $css_name)
 {
     $sprite_width = 0;
     $sprite_height = 0;
@@ -22,7 +22,7 @@ function my_merge_image ($my_array)
     $file_content .= "\twidth: $sprite_width" . "px;\n";
     $file_content .= "\theight: $sprite_height" . "px;\n}\n\n";
         
-    file_put_contents("style.css", $file_content);
+    file_put_contents($css_name, $file_content);
 
     //on initie les variables de position
     $x_pos = 0;
@@ -47,11 +47,11 @@ function my_merge_image ($my_array)
             background-position: -$x_pos" . "px 0px;
         }\n\n";
 
-        file_put_contents("style.css", $class_css, FILE_APPEND);
+        file_put_contents($css_name, $class_css, FILE_APPEND);
 
         //on incrémente la positon x pour que les images ne se superposent pas
         $x_pos += $img_width;
     }
 
-    return imagepng($sprite, "sprite.png");
+    return imagepng($sprite, $sprite_name);
 }

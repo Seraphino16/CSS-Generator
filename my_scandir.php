@@ -1,6 +1,6 @@
 <?php
 
-function my_scandir ($dir_path)
+function my_scandir ($dir_path, $is_recursive)
 {
     $my_pngs = array();
 
@@ -17,11 +17,11 @@ function my_scandir ($dir_path)
                 // echo "pregmatch\n";
                 array_push($my_pngs, $file_path);
                 // echo "fichier = $file_name" . "\n";
-            } elseif (false !== is_dir($file_path)) {
+            } elseif (false !== is_dir($file_path) && false !== $is_recursive) {
                 // echo "dossier = $file_name" . "\n";
                 if($file_name !== "." && $file_name !== "..") {
                     // echo $file_name . "\n";
-                    $my_pngs = array_merge(my_scandir($file_path), $my_pngs);
+                    $my_pngs = array_merge(my_scandir($file_path, $is_recursive), $my_pngs);
                     
                     // print_r($my_pngs);
                 }
