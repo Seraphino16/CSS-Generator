@@ -28,6 +28,3 @@ $css_name = (isset($options["s"])) ? $options["s"] : "sprite.css";
 
 $sprite_name .= (preg_match("/.+\.png$/", $sprite_name)) ? "" : ".png";
 $css_name .= (preg_match("/.+\.css$/", $css_name)) ? "" : ".css";
-
-echo "Le nom du sprite est: $sprite_name\n";
-echo "Le nom du fichier css est: $css_name\n";

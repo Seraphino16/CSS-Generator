@@ -11,6 +11,10 @@ $folder_path = end($argv);
 if($folder_path === "man") {
     echo file_get_contents("manual_css_generator.txt");
 } else {
+
+    echo "Le nom du sprite est: $sprite_name\n";
+    echo "Le nom du fichier css est: $css_name\n";
+
     $arr = my_scandir($folder_path, $is_recursive);
 
     echo "Les fichiers .png ont été récupérés dans le dossier choisi";
