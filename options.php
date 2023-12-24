@@ -3,13 +3,13 @@
 $short_options = "r"; //option pour la récusivité
 $short_options .= "i:"; // option pour le nom du sprite / les deux points sont pour la valeur requise
 $short_options .= "s:"; //option pour le nom du css
-$short_options .= "m";
+// $short_options .= "m";
 
 $long_options = array(
     "recursive",
     "output-image:",
     "output-style:",
-    "man"
+    // "man"
 );
 
 $options = getopt($short_options, $long_options);
