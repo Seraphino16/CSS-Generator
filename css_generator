@@ -8,7 +8,7 @@ include "my_merge.php";
 
 $folder_path = end($argv);
 
-if($folder_path === "man") {
+if($folder_path === "man" || $help) {
     echo file_get_contents("manual_css_generator.txt");
 } else {
 

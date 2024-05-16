@@ -9,10 +9,13 @@ Concatenate all images inside a folder in one sprite and write a style sheet rea
 Mandatory arguments to long options are mandatory for short options too.
 
 -r
-Look for images into the assets_folder passed as arguement and all of its subdirectories.
+    Look for images into the assets_folder passed as arguement and all of its subdirectories.
 
 -i [NAME]
-Name of the generated image. If blank, the default name is « sprite.png ».
+    Name of the generated image. If blank, the default name is « sprite.png ».
 
 -s [NAME]
-Name of the generated stylesheet. If blank, the default name is « style.css ».
+    Name of the generated stylesheet. If blank, the default name is « style.css ».
+
+-h, man
+    Display the help message
